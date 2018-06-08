@@ -9,12 +9,12 @@ function makeNumberArray(userInput) {
 function replaceThree(input) {
   var numbersArray = makeNumberArray(input)
   var outputArray = []
-  for (number = 0; number <= numbersArray.length; ++number) {
+  for (number = 0; number < numbersArray.length; ++number) {
     if ((number % 3) === 0 && number !== 0){
       outputArray.push("Sorry Dave")
-    } else if (replaceOne(number, 1)) {
+    } else if (replaceOneOrZero(number, 1)) {
       outputArray.push("Boop!")
-    } else if ((number % 10) === 0 || number === 0) {
+    } else if (replaceOneOrZero(number, 0)) {
       outputArray.push("Beep!")
    } else {
      outputArray.push(number)
@@ -23,9 +23,9 @@ function replaceThree(input) {
   return outputArray
 }
 
-function replaceOne(number, value) {
-  var string = number.toString()
-  if (string.includes(value)) {
+function replaceOneOrZero(number, value) {
+  var checkString = number.toString()
+  if (checkString.includes(value)) {
     return true
   }
 }
