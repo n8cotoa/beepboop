@@ -6,6 +6,17 @@ function makeNumberArray(userInput) {
   return numbersArray
 }
 
+function replaceThree(input) {
+  var numbersArray = makeNumberArray(input)
+  var outputArray = []
+  for (number = 0; number <= numbersArray.length; ++number) {
+    if ((number % 3) === 0 && number !== 0){
+      numbersArray.splice(index, 1, "Sorry Dave")
+    }
+  }
+  return numbersArray
+}
+
 function inputValidation(input) {
   if (input < 0) {
     return false
