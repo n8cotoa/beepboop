@@ -7,6 +7,10 @@
   border-bottom: 2px solid darkgray;
 }
 
+.container {
+  max-width: 750px;
+}
+
 .btn {
   margin-top: 15px;
 }

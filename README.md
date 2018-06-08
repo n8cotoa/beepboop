@@ -21,9 +21,9 @@
   * Example Input: n=7
   * Example Output: [0,1,2,3,4,5,6,7]
 
-* Program will replace any numbers divisible by 3 with "I'm sorry, Dave. I'm afraid I can't do that."
+* Program will replace any numbers divisible by 3 with "I'm sorry, (User's Name). I'm afraid I can't do that."
   * Example Input: 9
-  * Example Output: "I'm sorry, Dave. I'm afraid I can't do that."
+  * Example Output: "I'm sorry, (User's Name). I'm afraid I can't do that."
 
 * Program will replace any number containing a 1 with "Boop!"
   * Example Input: 10
@@ -33,7 +33,6 @@
   * Example Input: 40
   * Example Output: Beep!
 
-
 ## Technologies Used
 
 * HTML
@@ -41,10 +40,6 @@
 * Javascript
 * Bootstrap 3.7.7
 * jQuery 3.3.1
-
-## Links
-
-*
 
 ## License
 
