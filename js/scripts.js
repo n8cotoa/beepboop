@@ -6,7 +6,7 @@ function makeNumberArray(userInput) {
   return numbersArray
 }
 
-function replaceThree(input) {
+function replaceNum(input) {
   var numbersArray = makeNumberArray(input)
   var outputArray = []
   for (number = 0; number < numbersArray.length; ++number) {
@@ -16,11 +16,12 @@ function replaceThree(input) {
       outputArray.push("Boop!")
     } else if (replaceOneOrZero(number, 0)) {
       outputArray.push("Beep!")
-   } else {
+    } else {
      outputArray.push(number)
-   }
+    }
   }
-  return outputArray
+  return outputArray.join(", ")
+
 }
 
 function replaceOneOrZero(number, value) {
@@ -40,16 +41,13 @@ function inputValidation(input) {
   }
 }
 
-
-
 $(document).ready(function() {
-  $("#SubmitBtn").click(function(e) {
+  $("#submitBtn").click(function(e) {
     e.preventDefault();
     var inputNum = parseInt($("#userInput").val());
     makeNumberArray(inputNum);
     if (inputValidation(inputNum)) {
-      var results
-      $("#results").text(results)
+      $("#results").text(replaceNum(inputNum))
     } else {
       alert("Please enter a number higher than 0")
     }
