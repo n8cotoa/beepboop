@@ -20,7 +20,7 @@ function replaceNum(input) {
      outputArray.push(number)
     }
   }
-  return outputArray.join(", ")
+  return outputArray
 
 }
 
@@ -29,6 +29,20 @@ function replaceOneOrZero(number, value) {
   if (checkString.includes(value)) {
     return true
   }
+}
+
+function result(input) {
+  var outputArray = replaceNum(input)
+  return outputArray.join(", ")
+
+
+}
+
+function flipIt(input) {
+  var outputArray = replaceNum(input)
+  var flipArray = outputArray.reverse().join(", ")
+  return flipArray
+
 }
 
 function inputValidation(input) {
@@ -45,13 +59,24 @@ $(document).ready(function() {
   $("#submitBtn").click(function(e) {
     e.preventDefault();
     var inputNum = parseInt($("#userInput").val());
-    makeNumberArray(inputNum);
+
     if (inputValidation(inputNum)) {
-      $("#results").text(replaceNum(inputNum))
+      makeNumberArray(inputNum);
+      $("#results").text(result(inputNum))
     } else {
       alert("Please enter a number higher than 0")
     }
 
+  });
+  $("#flipBtn").click(function(e) {
+    e.preventDefault();
+    var inputNum = parseInt($("#userInput").val());
+    if (inputValidation(inputNum)) {
+      makeNumberArray(inputNum);
+      $("#results").text(flipIt(inputNum))
+    } else {
+      alert("Please enter a number higher than 0")
+    }
   });
 
 });
