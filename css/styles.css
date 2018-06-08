@@ -23,3 +23,15 @@
   width: 200px;
   float: left;
 }
+
+.green {
+  color: darkgreen;
+}
+
+.red {
+  color: darkred;
+}
+
+.blue {
+  color: skyblue;
+}

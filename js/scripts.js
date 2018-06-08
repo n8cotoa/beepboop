@@ -51,6 +51,23 @@ function getRandomImg() {
   image.alt = "A robot"
 }
 
+function getDesign(input) {
+  p = document.getElementById('textResults')
+  if (input < 50) {
+    p.classList.add("red")
+    p.classList.remove("blue")
+    p.classList.remove("green")
+  } else if (input < 100 && input > 51) {
+    p.classList.add("blue")
+    p.classList.remove("red")
+    p.classList.remove("green")
+  } else {
+    p.classList.add("green")
+    p.classList.remove("blue")
+    p.classList.remove("red")
+  }
+}
+
 function isNumber(name) {
   return !isNaN(parseFloat(name)) && isFinite(name);
 }
@@ -75,6 +92,7 @@ $(document).ready(function() {
     if (inputValidation(inputNum, userName)) {
       makeNumberArray(inputNum);
       getRandomImg()
+      getDesign(inputNum)
       $("#textResults").text(result(inputNum))
     } else {
       alert("Please enter your name and a number higher than 0")
@@ -87,6 +105,7 @@ $(document).ready(function() {
     if (inputValidation(inputNum, userName)) {
       makeNumberArray(inputNum);
       getRandomImg()
+      getDesign(inputNum)
       $("#textResults").text(flipIt(inputNum))
     } else {
       alert("Please enter your name and a number higher than 0")
