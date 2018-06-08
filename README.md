@@ -15,6 +15,25 @@
 1. Commit and push your changes
 1. Create a PR
 
+## Specifications
+
+* Program will take a number from user and create a range of numbers from 0 to n
+  * Example Input: n=7
+  * Example Output: [0,1,2,3,4,5,6,7]
+
+* Program will replace any numbers divisible by 3 with "I'm sorry, Dave. I'm afraid I can't do that."
+  * Example Input: 9
+  * Example Output: "I'm sorry, Dave. I'm afraid I can't do that."
+
+* Program will replace any number containing a 1 with "Boop!"
+  * Example Input: 10
+  * Example Output: Boop!
+
+* Program will replace any number containing 0 with "Beep!"
+  * Example Input: 40
+  * Example Output: Beep!
+
+
 ## Technologies Used
 
 * HTML
