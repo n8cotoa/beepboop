@@ -11,8 +11,10 @@
   <script src="js/scripts.js"></script>
 </head>
 <body>
+  <div class="jumbotron">
+      <h1>Beep Boop!</h1>
+  </div>
   <div class="container">
-    <h1>Beep Boop!</h1>
     <div class="form-group">
       <label for="userName">Your Name:</label>
       <input id="userName" type="text" class="form-control">
@@ -24,7 +26,10 @@
       <button id="flipBtn" class="btn btn-warning">Flip It!</button>
     </div>
     <div id="results">
-      <p></p>
+      <div>
+        <img id="randomImg" src="" alt="">
+        <p id="textResults"></p>
+      </div>
     </div>
   </div>
 </body>

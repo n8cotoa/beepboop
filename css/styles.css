@@ -1,7 +1,21 @@
+.jumbotron {
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-image: url(../img/robots.png);
+  color: white;
+  border-bottom: 2px solid darkgray;
+}
+
 .btn {
   margin-top: 15px;
 }
 
 .form-control {
   margin-top: 10px;
+}
+
+#randomImg {
+  width: 200px;
+  float: left;
 }

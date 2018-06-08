@@ -1,7 +1,3 @@
-function getName(name) {
-  return name
-}
-
 function makeNumberArray(userInput) {
   var numbersArray = [];
   for (index = 0; index <= userInput; ++index) {
@@ -26,7 +22,6 @@ function replaceNum(input) {
     }
   }
   return outputArray
-
 }
 
 function replaceOneOrZero(number, value) {
@@ -39,14 +34,21 @@ function replaceOneOrZero(number, value) {
 function result(input) {
   var outputArray = replaceNum(input)
   return outputArray.join(" ")
-
 }
 
 function flipIt(input) {
   var outputArray = replaceNum(input)
   var flipArray = outputArray.reverse().join(" ")
   return flipArray
+}
 
+function getRandomImg() {
+  var imgArray = [0,1,2]
+  var imgNameArray = ["robot1.jpg", "robot2.jpg", "robot3.jpg"]
+  var index = imgArray[Math.floor(Math.random() * imgArray.length)];
+  image = document.getElementById('randomImg')
+  image.src = "img/" + imgNameArray[index]
+  image.alt = "A robot"
 }
 
 function isNumber(name) {
@@ -71,13 +73,12 @@ $(document).ready(function() {
     var inputNum = parseInt($("#userInput").val());
     var userName = $("#userName").val();
     if (inputValidation(inputNum, userName)) {
-      getName(userName)
       makeNumberArray(inputNum);
-      $("#results").text(result(inputNum))
+      getRandomImg()
+      $("#textResults").text(result(inputNum))
     } else {
       alert("Please enter your name and a number higher than 0")
     }
-
   });
   $("#flipBtn").click(function(e) {
     e.preventDefault();
@@ -85,7 +86,8 @@ $(document).ready(function() {
     var userName = $("#userName").val();
     if (inputValidation(inputNum, userName)) {
       makeNumberArray(inputNum);
-      $("#results").text(flipIt(inputNum))
+      getRandomImg()
+      $("#textResults").text(flipIt(inputNum))
     } else {
       alert("Please enter your name and a number higher than 0")
     }
