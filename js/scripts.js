@@ -1,3 +1,7 @@
+function getName(name) {
+  return name
+}
+
 function makeNumberArray(userInput) {
   var numbersArray = [];
   for (index = 0; index <= userInput; ++index) {
@@ -10,7 +14,7 @@ function replaceNum(input) {
   var numbersArray = makeNumberArray(input)
   var outputArray = []
   for (number = 0; number < numbersArray.length; ++number) {
-    var userName = name
+    var userName = $("#userName").val();
     if ((number % 3) === 0 && number !== 0){
       outputArray.push("I'm sorry, " + userName + ". I'm afraid I can't do that.")
     } else if (replaceOneOrZero(number, 1)) {
@@ -35,7 +39,6 @@ function replaceOneOrZero(number, value) {
 function result(input) {
   var outputArray = replaceNum(input)
   return outputArray.join(" ")
-
 
 }
 
@@ -63,14 +66,14 @@ function inputValidation(input, name) {
 }
 
 $(document).ready(function() {
-
   $("#submitBtn").click(function(e) {
     e.preventDefault();
     var inputNum = parseInt($("#userInput").val());
     var userName = $("#userName").val();
     if (inputValidation(inputNum, userName)) {
+      getName(userName)
       makeNumberArray(inputNum);
-      $("#results").text(result(inputNum, userName))
+      $("#results").text(result(inputNum))
     } else {
       alert("Please enter your name and a number higher than 0")
     }
@@ -79,9 +82,10 @@ $(document).ready(function() {
   $("#flipBtn").click(function(e) {
     e.preventDefault();
     var inputNum = parseInt($("#userInput").val());
+    var userName = $("#userName").val();
     if (inputValidation(inputNum, userName)) {
       makeNumberArray(inputNum);
-      $("#results").text(flipIt(inputNum, userName))
+      $("#results").text(flipIt(inputNum))
     } else {
       alert("Please enter your name and a number higher than 0")
     }
