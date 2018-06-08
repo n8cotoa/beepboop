@@ -11,17 +11,24 @@ function replaceThree(input) {
   var outputArray = []
   for (number = 0; number <= numbersArray.length; ++number) {
     if ((number % 3) === 0 && number !== 0){
-      numbersArray.splice(number, 1, "Sorry Dave")
-    } else if (number === 1 || number === 10) {
-      console.log(numbersArray);
-      numbersArray.splice(number, 1, "Boop!")
+      outputArray.push("Sorry Dave")
+    } else if (replaceOne(number, 1)) {
+      outputArray.push("Boop!")
     } else if ((number % 10) === 0 || number === 0) {
-      numbersArray.splice(number, 1, "Beep!")
+      outputArray.push("Beep!")
+   } else {
+     outputArray.push(number)
    }
   }
-  return numbersArray
+  return outputArray
 }
 
+function replaceOne(number, value) {
+  var string = number.toString()
+  if (string.includes(value)) {
+    return true
+  }
+}
 
 function inputValidation(input) {
   if (input < 0) {
